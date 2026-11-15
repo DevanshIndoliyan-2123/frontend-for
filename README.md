@@ -1,0 +1,204 @@
+# Devansh Auth – Frontend
+
+A modern authentication frontend built with **React, TypeScript, and Vite**, integrated with a Java Spring Boot authentication backend.
+
+The application provides a user interface for account registration, login, email verification, password recovery, and account management.
+
+## 🚀 Features
+
+- **User Registration** – Create a new account.
+- **User Login** – Authenticate users with email and password.
+- **Email Verification** – Verify registered email addresses using OTP.
+- **Forgot Password** – Request a password reset OTP.
+- **Reset Password** – Reset account passwords securely.
+- **Account Management** – Access protected account information.
+- **Protected Routes** – Restrict access to authenticated users.
+- **API Integration** – Communicate with the Spring Boot backend through REST APIs.
+- **Environment Configuration** – Configure backend API URLs using environment variables.
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React 19 | Frontend UI |
+| TypeScript | Type safety |
+| Vite 7 | Development server and build tool |
+| React Router | Application routing |
+| CSS | Application styling |
+| Fetch API | Backend communication |
+| npm | Package management |
+
+## 📁 Project Structure
+
+```text
+frontend/
+│
+├── public/
+│
+├── src/
+│   ├── app/
+│   │   ├── App.tsx
+│   │   ├── router.tsx
+│   │   └── routes.tsx
+│   │
+│   ├── components/
+│   │
+│   ├── config/
+│   │   └── env.ts
+│   │
+│   ├── features/
+│   │   ├── account/
+│   │   │   └── AccountPage.tsx
+│   │   │
+│   │   └── auth/
+│   │       ├── AuthContext.tsx
+│   │       ├── authApi.ts
+│   │       ├── storage.ts
+│   │       ├── types.ts
+│   │       └── pages/
+│   │           ├── LoginPage.tsx
+│   │           ├── RegisterPage.tsx
+│   │           ├── VerifyEmailPage.tsx
+│   │           ├── ForgotPasswordPage.tsx
+│   │           └── ResetPasswordPage.tsx
+│   │
+│   ├── lib/
+│   ├── styles/
+│   └── main.tsx
+│
+├── .env.example
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── vite.config.ts
+```
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/DevanshIndoliyan-2123/frontend-for-authsys.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd frontend-for-authsys
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file in the project root directory.
+
+```env
+VITE_API_BASE_URL=http://localhost:8080/api/v1
+```
+
+For production, configure the deployed backend URL:
+
+```env
+VITE_API_BASE_URL=https://authentication-v6a9.onrender.com/api/v1
+```
+
+**Note:** Restart the Vite development server after changing environment variables. Vite exposes `VITE_` variables in the frontend bundle, so never store passwords, private keys, or other secrets in them.
+
+### 5. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the application:
+
+```text
+http://localhost:5173
+```
+
+## 🔌 Backend Integration
+
+This frontend communicates with a Java Spring Boot REST API.
+
+**Backend Repository:**  
+[Authentication – Spring Boot Backend](https://github.com/DevanshIndoliyan-2123/Authentication)
+
+**Backend Deployment:**  
+[https://authentication-v6a9.onrender.com](https://authentication-v6a9.onrender.com)
+
+The frontend uses the following API base URL:
+
+```text
+/api/v1
+```
+
+The backend is responsible for authentication, JWT validation, OTP processing, email verification, password management, and protected account operations.
+
+## 📦 Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm install` | Install project dependencies |
+| `npm run dev` | Start development server |
+| `npm run build` | Type-check and build production assets |
+| `npm run typecheck` | Run TypeScript checks |
+| `npm run preview` | Preview production build locally |
+
+### Production build
+
+```bash
+npm run build
+```
+
+The optimized production files are generated inside the `dist/` directory.
+
+## 🌐 Deployment
+
+The frontend can be deployed independently from the Spring Boot backend.
+
+Recommended hosting platform: **Vercel**
+
+Build configuration:
+
+| Setting | Value |
+|---|---|
+| Framework | Vite |
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
+| Install Command | `npm install` |
+
+Configure the following environment variable in your hosting platform:
+
+```env
+VITE_API_BASE_URL=https://authentication-v6a9.onrender.com/api/v1
+```
+
+Make sure the backend CORS configuration allows your deployed frontend domain.
+
+## 🔐 Security Considerations
+
+- Never commit `.env` files containing secrets.
+- Keep sensitive credentials on the backend.
+- Validate and sanitize user input.
+- Use HTTPS in production.
+- Protect authenticated routes.
+- Keep frontend and backend environment configurations separate.
+
+## 👨‍💻 Author
+
+**Devansh Indoliyan**
+
+- GitHub: [@DevanshIndoliyan-2123](https://github.com/DevanshIndoliyan-2123)
+- Frontend Repository: [frontend-for-authsys](https://github.com/DevanshIndoliyan-2123/frontend-for-authsys)
+- Backend Repository: [Authentication](https://github.com/DevanshIndoliyan-2123/Authentication)
+
+---
+
+⭐ If you find this project useful, consider giving it a star!
